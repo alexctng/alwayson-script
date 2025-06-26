@@ -1,0 +1,13 @@
+name: Run Script Locally
+
+on:
+  workflow_dispatch:     # manual trigger
+  schedule:
+    - cron: '0 6 * * *'  # run daily at 6am (UTC)
+
+jobs:
+  run-local:
+    runs-on: self-hosted
+    steps:
+      - name: Run AlwaysOn.py
+        run: python "C:\Users\alexctng\The Hong Kong Jockey Club\Treasury - Data Analytics Team\Script\Git\AlwaysOn.py"
